@@ -1,0 +1,39 @@
+{
+  "name": "lizardon-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisca343/lizardon-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisca343/lizardon-api/issues"
+  },
+  "homepage": "https://github.com/luisca343/lizardon-api#readme",
+  "dependencies": {
+    "@discordjs/rest": "^0.4.1",
+    "discord-api-types": "^0.32.1",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.16",
+    "standard": "^17.0.0"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-shadow": "off"
+    },
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
+  }
+}

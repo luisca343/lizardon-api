@@ -37,14 +37,13 @@ module.exports = {
   }
 }
 
-router.get('/', function (req, res) {
-  res.send('Lizardon')
-  db.query('SELECT * FROM frases', function (err, result) {
+router.get('/frases', function (req, res) {
+  db.query('SELECT f.id, f.frase, f.fecha, u.nombre, u.color  FROM frases f JOIN usuarios u ON f.idUsuario = u.id', function (err, result, fields) {
     if (err) {
-      console.log(err.message)
-      return null
+      console.log(err)
+      return
     }
-    console.log(result)
+    res.json(result)
   })
 })
 

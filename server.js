@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(cors())
 
 const datos = require('./datos')
 datos.recargarDatos()
@@ -17,4 +19,4 @@ app.use('/lizardon', lizardon.router)
 const discord = require('./components/discord/discord')
 discord.inicializar()
 
-app.listen(3000, () => console.log('App funcionando en http://localhost:3000'))
+app.listen(34301, () => console.log('App funcionando en http://localhost:34301'))

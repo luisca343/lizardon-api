@@ -23,9 +23,8 @@ module.exports = {
     })
 
     client.on('messageCreate', msg => {
-      if (msg.author.bot) return
-      console.log(msg.content)
-      msg.channel.send(`Has dicho '${msg.content}'`)
+      // if (msg.author.bot) return
+      // console.log()
     })
     client.on('error', error => {
       console.error(error)

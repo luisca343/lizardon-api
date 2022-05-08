@@ -38,7 +38,7 @@ function setOption (option) {
     .setRequired(true)
   const usuarios = datos.usuarios
   usuarios.forEach(usuario => {
-    option.addChoice(usuario.nombre, usuario.id.toString())
+    option.addChoice(`[${usuario.frases}] ${usuario.nombre}`, usuario.id.toString())
   })
   return option
 }

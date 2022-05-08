@@ -27,7 +27,7 @@ module.exports = {
   },
   getUsuarios: async function () {
     return await new Promise((resolve, reject) => {
-      db.query('SELECT * FROM usuarios ORDER BY nombre ASC', function (err, result) {
+      db.query('SELECT u.id, u.nombre, (SELECT COUNT(*) FROM frases WHERE idUsuario = u.id) as frases FROM usuarios u ORDER BY frases DESC, nombre ASC', function (err, result) {
         if (err) {
           return reject(err)
         }

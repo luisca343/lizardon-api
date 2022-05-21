@@ -20,6 +20,7 @@
   "homepage": "https://github.com/luisca343/lizardon-api#readme",
   "dependencies": {
     "@discordjs/rest": "^0.4.1",
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "discord-api-types": "^0.32.1",
     "discord.js": "^13.6.0",
@@ -27,7 +28,9 @@
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.16",
-    "standard": "^17.0.0"
+    "socket.io": "^4.5.0",
+    "standard": "^17.0.0",
+    "tmi.js": "^1.8.5"
   },
   "eslintConfig": {
     "rules": {

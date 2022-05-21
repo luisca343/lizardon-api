@@ -38,7 +38,17 @@ module.exports = {
 }
 
 router.get('/frases', function (req, res) {
-  db.query('SELECT f.id, f.frase, f.fecha, u.nombre, u.imagen, u.transparente, u.color, u.id as idUsuario  FROM frases f JOIN usuarios u ON f.idUsuario = u.id', function (err, result, fields) {
+  db.query('SELECT f.id, f.frase, f.fecha, u.nombre, u.imagen, u.transparente, u.id as idUsuario  FROM frases f JOIN usuarios u ON f.idUsuario = u.id ORDER BY fecha ASC', function (err, result, fields) {
+    if (err) {
+      console.log(err)
+      return
+    }
+    res.json(result)
+  })
+})
+
+router.get('/frases1', function (req, res) {
+  db.query('SELECT f.id, f.frase, f.fecha, u.nombre, u.imagen, u.transparente, u.id as idUsuario  FROM frases1 f JOIN usuarios u ON f.idUsuario = u.id ORDER BY fecha ASC', function (err, result, fields) {
     if (err) {
       console.log(err)
       return

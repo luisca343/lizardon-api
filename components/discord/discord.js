@@ -38,6 +38,7 @@ module.exports = {
         await command.execute(interaction)
       } catch (error) {
         console.log(error)
+
         await interaction.reply({
           content: 'Ha petao, lol',
           ephemeral: true
@@ -58,7 +59,7 @@ function recargarComandos () {
 
   for (const file of commandFiles) {
     const command = require(`./commands/${file}`)
-    // console.log(`Registrando el comando ${command.data.name}`)
+    console.log(`Registrando el comando ${command.data.name}`)
     commands.push(command.data.toJSON())
     _client.commands.set(command.data.name, command)
   }

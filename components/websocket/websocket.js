@@ -14,7 +14,7 @@ module.exports = {
       socket.on('join', function (room) {
         socket.join(room)
         console.log('SALAS')
-        console.log(io.sockets.adapter.rooms)
+        // console.log(io.sockets.adapter.rooms)
         console.log(`Unido a ${room}`)
       })
       const request = {
@@ -46,5 +46,10 @@ module.exports = {
   },
   tts: function (params) {
     io.to('Luisca343-overlay').emit('tts', `${params}`)
+  },
+  alerta: function (tipo, datos) {
+    const json = { tipo, datos }
+    // console.log(json)
+    io.to('Luisca343-overlay').emit('alerta', `${JSON.stringify(json)}`)
   }
 }

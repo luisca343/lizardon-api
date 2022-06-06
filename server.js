@@ -11,9 +11,11 @@ datos.recargarDatos()
 // # Inicialización de rutas de los endpoints
 const index = require('./routes/index')
 const lizardon = require('./routes/lizardon')
+const twitchRouter = require('./routes/twitch')
 // # Registro de rutas de los endpoints
 app.use('/', index)
 app.use('/lizardon', lizardon.router)
+app.use('/twitch', twitchRouter.router)
 
 // # Inicialicamos el socket
 const http = require('http')
@@ -25,7 +27,7 @@ socket.iniciar(server)
 const discord = require('./components/discord/discord')
 discord.inicializar()
 
-const twitch = require('./components/twitch/twitch')
+const twitch = require('./components/twitch-old/twitch')
 twitch.inicializar(socket)
 
 app.listen(34301, () => console.log('App funcionando en http://localhost:34301'))
